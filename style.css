@@ -951,11 +951,15 @@ img.alignright,
 
 .site-header {
 	background-color: #fff;
-	min-height: 160px;
+	/* min-height: 160px; */
+	background: 
+  url( 'images/tags-logo.png' ) no-repeat top left,
+	url( 'images/tg_grass.jpg' ) repeat-x top left;
+	background-size: 60px, auto;
 }
 
 .site-header .wrap {
-	padding: 40px 0;
+	padding: 0px 0;
 }
 
 /* ## Title Area
@@ -976,16 +980,18 @@ img.alignright,
 	font-size: 3.2rem;
 	font-weight: 400;
 	line-height: 1.2;
+	font-family: "Times New Roman",Georgia,Times,Serif;
+	color: #ffffff;
 }
 
 .site-title a,
 .site-title a:hover,
 .site-title a:focus {
-	color: #333;
+	color: #ffffff;
 }
 
 .header-image .site-title > a {
-	background: url(images/logo.png) no-repeat left;
+	background: url(images/tags-logo.png) no-repeat left;
 	float: left;
 	min-height: 60px;
 	width: 100%;
