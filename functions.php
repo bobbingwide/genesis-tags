@@ -3,6 +3,9 @@
 genesis_tags_functions_loaded();
 
 
+genesis_tags_functions_loaded();
+
+
 
 //* Child theme (do not remove) - is this really necessary? 
 define( 'CHILD_THEME_NAME', 'TAGS' );
@@ -305,7 +308,14 @@ function genesis_tags_functions_loaded() {
 	//add_filter( "genesis_edit_post_link", "__return_false" );
 	
   //genesis_tags_register_sidebars();
+	remove_action( 'genesis_site_title', 'genesis_seo_site_title' );
+	add_action( 'genesis_site_title', 'genesis_tags_site_title' );
+	remove_action( 'genesis_site_description', 'genesis_seo_site_description' );
+	
+	
 
 }
 
-genesis_tags_functions_loaded();
+function genesis_tags_site_title( ) {
+	echo '<h1 class="site-title">The Anchor Golf Society</h1>';
+}
