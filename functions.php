@@ -294,7 +294,7 @@ function genesis_tags_functions_loaded() {
 	add_theme_support( 'custom-background' );
 
 	//* Add support for 5-column footer widgets - requires extra CSS
-	add_theme_support( 'genesis-footer-widgets', 5 );
+	add_theme_support( 'genesis-footer-widgets', 3 );
 
 	add_filter( 'genesis_footer_creds_text', "tags_footer_creds_text" );
 	
@@ -309,8 +309,14 @@ function genesis_tags_functions_loaded() {
 	
   //genesis_tags_register_sidebars();
 	remove_action( 'genesis_site_title', 'genesis_seo_site_title' );
+	
+	/* Replace site title by modified site description
+	*/
 	add_action( 'genesis_site_title', 'genesis_tags_site_title' );
 	remove_action( 'genesis_site_description', 'genesis_seo_site_description' );
+	
+	// Remove primary menu
+	remove_action( 'genesis_after_header', 'genesis_do_nav' );
 	
 	
 
