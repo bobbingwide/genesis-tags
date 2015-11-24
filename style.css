@@ -12,6 +12,14 @@ License: GPL-2.0+
 License URI: http://www.gnu.org/licenses/gpl-2.0.html  
 */
 
+/**
+ * #495200 - Dark greeny for text
+ * #77aa33 - Green background - for header when no images available
+ * 
+ * #c3251d link red -> #63832f
+ * hn -> #63832f
+ * 
+
 //@import url("../genesis/style.css" );
 
 /* # Table of Contents
@@ -154,7 +162,7 @@ body > div {
 
 body {
 	background-color: #ffffff;
-	color: #333;
+	color: #495200;
 	font-family: Lato, sans-serif;
 	font-size: 18px;
 	font-size: 1.8rem;
@@ -180,7 +188,7 @@ textarea:focus,
 }
 
 a {
-	color: #c3251d;
+	color: #63832f;
 	text-decoration: underline;
 }
 
@@ -249,7 +257,7 @@ h3,
 h4,
 h5,
 h6 {
-	color: #333;
+	color: #63832f;
 	font-family: Lato, sans-serif;
 	font-weight: 400;
 	line-height: 1.2;
@@ -429,7 +437,7 @@ input:focus[type="button"],
 input:focus[type="reset"],
 input:focus[type="submit"],
 .button:focus  {
-	background-color: #c3251d;
+	background-color: #63832f;
 	color: #fff;
 }
 
@@ -751,7 +759,7 @@ th {
 
 .entry-title a:hover,
 .entry-title a:focus {
-	color: #c3251d;
+	color: #63832f;
 }
 
 .widget-title {
@@ -903,7 +911,7 @@ img.alignright,
 }
 
 .enews-widget input[type="submit"] {
-	background-color: #c3251d;
+	background-color: #63832f;
 	color: #fff;
 	margin: 0;
 	width: 100%;
@@ -950,7 +958,7 @@ img.alignright,
 ---------------------------------------------------------------------------------------------------- */
 
 .site-header {
-	background-color: #fff;
+	background-color: #77aa33;
 	/* min-height: 160px; */
 	background: 
   url( 'images/tags-logo.png' ) no-repeat top left,
@@ -1045,7 +1053,7 @@ img.alignright,
 	color: #ffffff;
 	text-decoration: none;
 	display: block;
-	padding: 30px 24px;
+	padding: 20px 14px;
 }
 
 .genesis-nav-menu a:hover,
@@ -1177,7 +1185,7 @@ img.alignright,
 .nav-primary .genesis-nav-menu .sub-menu a:hover,
 .nav-primary .genesis-nav-menu .sub-menu a:focus,
 .nav-primary .genesis-nav-menu .sub-menu .current-menu-item > a {
-	color: #c3251d;
+	color: #63832f;
 	text-decoration: underline;
 }
 
@@ -1285,7 +1293,7 @@ p.entry-meta {
 .archive-pagination li a:hover,
 .archive-pagination li a:focus,
 .archive-pagination .active a {
-	background-color: #c3251d;
+	background-color: #63832f;
 	text-decoration: underline;
 }
 
