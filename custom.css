@@ -32,13 +32,20 @@ footer hr {
 	border-top: 1px solid #77aa33;
 }
 
+a.bw_post, 
 span.title { 
 	font-size: 24px;
+}
+
+a.bw_post,
+span.label {
+	font-weight: bold;
 }
 
 
 .footer-widgets-1 {
 	width: 50%;
+	margin-left: 2%;
 	margin-right: 2%; 
 	float: left;
 }
@@ -49,4 +56,64 @@ span.title {
 	width: 20%;
 	margin-right: 2%;
 	float: left;
+}
+
+/** 
+ * Styling for the tabbed part of Events
+ */
+
+div.TAGS_content-info { width: 100%; }
+div.TAGS_content-body { background-color: #ffffff; margin-top: 0px; padding: 10px 20px; }
+div.TAGS_content-info:after { clear: left; }
+
+.TAGS_content-info ul#sections li {
+	line-height: 1;
+	display: block;
+	float: left;
+	padding: 8px 8px 9px;
+	margin: 0;
+}
+
+.TAGS_content-info ul#sections li.current {
+	padding-top: 7px;
+	background-color: #fff;
+
+	border-style: solid;
+	border-width: 1px 1px 0 1px;
+	border-color: #d7d7d7;
+
+	-webkit-box-shadow: 0 0 8px 0px rgba( 100, 100, 100, 0.12 );
+	-moz-box-shadow: 0 0 8px 0px rgba( 100, 100, 100, 0.12 );
+	box-shadow: 0 0 8px 0px rgba( 100, 100, 100, 0.12 );
+
+	-webkit-border-top-left-radius: 3px;
+	-webkit-border-top-right-radius: 3px;
+	border-top-left-radius: 3px;
+	border-top-right-radius: 3px;
+}
+
+.TAGS_content-info ul>li:before { content: none; }
+
+
+/**
+ * Version for genesis based themes
+ *
+ * This uses a box shadow to place a narrower line than you'd get with a border.
+ */
+
+.entry-content .TAGS_content-info ul#sections li.current,
+.entry-content .TAGS_content-info ul#sections li:hover {
+	padding-top: 7px;
+	background-color: #fff;
+
+	border-style: solid;
+	border-width: 0px 0px 0px 0px;
+	border-color: #5b6021;
+	
+	box-shadow: 0 8px 6px -6px #5b6021;
+
+}
+
+
+
 
