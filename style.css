@@ -189,7 +189,7 @@ textarea:focus,
 
 a {
 	color: #63832f;
-	text-decoration: underline;
+	text-decoration: none;
 }
 
 a:hover,
@@ -293,6 +293,8 @@ h6 {
 	font-size: 16px;
 	font-size: 1.6rem;
 }
+
+body.hidden_title h1.entry-title { display: none; }
 
 /* ## Objects
 --------------------------------------------- */
@@ -535,7 +537,7 @@ th {
 
 .site-inner {
 	clear: both;
-	padding-top: 40px;
+	padding-top: 0px;
 }
 
 /* ## Column Widths and Positions
@@ -1203,8 +1205,8 @@ img.alignright,
 --------------------------------------------- */
 
 .entry {
-	margin-bottom: 40px;
-	padding: 50px 60px;
+	margin-bottom: 20px;
+	padding: 10px 10px;
 }
 
 .content .entry {
@@ -1380,9 +1382,9 @@ li.comment {
 }
 
 .sidebar li {
-	border-bottom: 1px dotted #ddd;
+	/* border-bottom: 1px dotted #ddd;
 	margin-bottom: 10px;
-	padding-bottom: 10px;
+	padding-bottom: 10px;	*/
 }
 
 .sidebar p:last-child,
@@ -1401,16 +1403,25 @@ li.comment {
 ---------------------------------------------------------------------------------------------------- */
 
 .site-footer {
-	background-color: #fff;
+	background-color: #fafdd0;
 	font-size: 16px;
 	font-size: 1.6rem;
 	line-height: 1;
-	padding: 40px 0;
+	padding: 10px 0;
 	text-align: center;
 }
 
 .site-footer p {
 	margin-bottom: 0;
+}
+
+
+.footer-widgets-1,
+.footer-widgets-2,
+.footer-widgets-3 {
+	width: 31.333%;
+	margin-right: 2%;
+	float: left;
 }
 
 

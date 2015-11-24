@@ -1,3 +1,52 @@
 /* (C) Copyright Bobbing Wide 2015 */
 /* Dummy custom.css for genesis-tags theme */
 /* Note that this doesn't get ZIPped by tip.bat */
+
+.textwidget .bw_list li {
+	border: 1px solid #ccc;
+	border-top: 0;
+	background-color: #eee;
+	margin: 0.2em 0;
+	padding: 0 0 0 5px;
+	
+}
+
+.textwidget .bw_list a {
+	text-decoration: none;
+}
+
+.footer-widgets {
+	background-color: #77aa33;
+	font-size: 80%;
+}
+
+.footer-widgets .widget-area {
+	margin-top: 20px;
+}
+
+footer 
+{ clear: both; }
+
+footer hr {
+	margin: 10px 5%;
+	border-top: 1px solid #77aa33;
+}
+
+span.title { 
+	font-size: 24px;
+}
+
+
+.footer-widgets-1 {
+	width: 50%;
+	margin-right: 2%; 
+	float: left;
+}
+
+
+.footer-widgets-2,
+.footer-widgets-3 {
+	width: 20%;
+	margin-right: 2%;
+	float: left;
+
