@@ -307,12 +307,12 @@ function genesis_tags_functions_loaded() {
 	add_action( 'genesis_entry_footer', 'genesis_tags_post_info' );
 	//add_filter( "genesis_edit_post_link", "__return_false" );
 	
-  //genesis_tags_register_sidebars();
-	remove_action( 'genesis_site_title', 'genesis_seo_site_title' );
-	
+  //genesis_tags_register_sidebars(); 
+	 	
 	/* Replace site title by modified site description
 	*/
-	add_action( 'genesis_site_title', 'genesis_tags_site_title' );
+	//remove_action( 'genesis_site_title', 'genesis_seo_site_title' );
+	//add_action( 'genesis_site_title', 'genesis_tags_site_title' );
 	remove_action( 'genesis_site_description', 'genesis_seo_site_description' );
 	
 	// Remove primary menu
