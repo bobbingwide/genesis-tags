@@ -18,6 +18,8 @@
 .footer-widgets {
 	background-color: #77aa33;
 	font-size: 80%;
+	max-width: 1200px;
+	margin: 0 auto;
 }
 
 .footer-widgets .widget-area {
@@ -45,7 +47,7 @@ span.label {
 
 .footer-widgets-1 {
 	width: 50%;
-	margin-left: 2%;
+	/* margin-left: 2%; */
 	margin-right: 2%; 
 	float: left;
 }
@@ -145,8 +147,20 @@ h1:before { content: "Company Name"; }
 @media only screen and (max-width: 1200px) {
 
 	.site-inner,
-	.wrap {
+	.wrap,
+	.footer-widgets {
 		max-width: 960px; 
+	}
+	
+	.title-area {
+		/* width: 300px; */
+		width: 50%;
+		
+	}
+	
+	.site-header .widget-area {
+		/* width: 620px; */
+		width: 50%;
 	}
 
 	.content-sidebar-sidebar .content-sidebar-wrap,
@@ -155,34 +169,40 @@ h1:before { content: "Company Name"; }
 		/* width: 740px; */
 	}
 
-	.content,
-	.site-header .widget-area {
-		/* width: 620px; */
+	.content {
+		width: 60%;
 	}
+	
 
 	.sidebar-content-sidebar .content,
 	.sidebar-sidebar-content .content,
 	.content-sidebar-sidebar .content {
 		/* width: 400px; */
+		width: 60%;
 	}
 
 	.sidebar-primary {
+		width: 40%;
 	
   }
 	
-	.title-area {
-		/* width: 300px; */
-		width: 40%;
-		
-	}
 
 }
 
 @media only screen and (max-width: 960px) {
 
 	.site-inner,
-	.wrap {
+	.wrap,
+	.footer-widgets {
 		max-width: 800px;
+	}
+	
+	.title-area {
+		width: 50%;
+	}
+	
+	.site-header .widget-area {
+		width: 50%;
 	}
 
 	.content,
@@ -193,14 +213,20 @@ h1:before { content: "Company Name"; }
 	.sidebar-primary,
 	.sidebar-secondary,
 	.sidebar-sidebar-content .content,
-	.sidebar-sidebar-content .content-sidebar-wrap,
-	.site-header .widget-area {
+	.sidebar-sidebar-content .content-sidebar-wrap {
+		width: 100%;
+		max-width: 100%;
+	
+	}
+	
+	.footer-widgets-1,
+	.footer-widgets-2,
+	.footer-widgets-3 {
 		width: 100%;
 	}
 	
-	.title-area {
-		width: 40%;
-	}
+	
+	
 	
   /*
 
@@ -240,25 +266,7 @@ h1:before { content: "Company Name"; }
 		display: none;
 	}
 	*/
-
-}
-
-@media only screen and (max-width: 800px) {
-	.title-area {
-		width: 100%;
-	}
-	/*
-	body {
-		background-color: #fff;
-		font-size: 16px;
-		font-size: 1.6rem;
-	}
-
-	.site-inner,
-	.wrap {
-		padding-left: 5%;
-		padding-right: 5%;
-	}
+	
 
 	.archive-description,
 	.author-box,
@@ -270,6 +278,39 @@ h1:before { content: "Company Name"; }
 	.site-header {
 		padding: 0;
 	}
+
+}
+
+@media only screen and (max-width: 768px) {
+	.title-area {
+		width: 100%;
+	}
+	
+	.site-header .widget-area {
+		width: 100%;
+	}
+	
+	.genesis-nav-menu a {
+		padding: 0px 14px 5px 14px;
+	} 
+	
+	/*
+	body {
+		background-color: #fff;
+		font-size: 16px;
+		font-size: 1.6rem;
+	}
+
+	.site-inner,
+	.wrap,
+	.footer-widgets {
+		padding-left: 5%;
+		padding-right: 5%;
+	}
+	*/
+
+	
+  /*
 
 	.archive-pagination li a {
 		margin-bottom: 4px;
@@ -319,7 +360,7 @@ h1:before { content: "Company Name"; }
 .genesis-nav-menu a,
 .genesis-nav-menu > .first > a,
 .genesis-nav-menu > .last > a {
-	padding: 5px 5px 0 0;
+	padding: 5px 5px 5px 0;
 }
 
 .genesis-nav-menu {

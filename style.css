@@ -19,9 +19,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
  * #c3251d link red -> #63832f
  * hn -> #63832f
  * 
-
-//@import url("../genesis/style.css" );
-
+ */
 /* # Table of Contents
 - Imports
 - HTML5 Reset
@@ -199,7 +197,7 @@ a:focus {
 }
 
 p {
-	margin: 0 0 28px;
+	margin: 0 0 10px;
 	padding: 0;
 }
 
@@ -385,7 +383,7 @@ textarea {
 	font-size: 18px;
 	font-size: 1.8rem;
 	font-weight: 300;
-	padding: 16px;
+	padding: 5px 0px;
 	width: 100%;
 }
 
@@ -548,7 +546,7 @@ th {
 .content-sidebar-sidebar .content-sidebar-wrap,
 .sidebar-content-sidebar .content-sidebar-wrap,
 .sidebar-sidebar-content .content-sidebar-wrap {
-	width: 980px;
+	max-width: 980px;
 }
 
 .content-sidebar-sidebar .content-sidebar-wrap {
@@ -564,7 +562,7 @@ th {
 
 .content {
 	float: right;
-	width: 800px;
+	max-width: 800px;
 }
 
 .content-sidebar .content,
@@ -576,7 +574,7 @@ th {
 .content-sidebar-sidebar .content,
 .sidebar-content-sidebar .content,
 .sidebar-sidebar-content .content {
-	width: 580px;
+	max-width: 580px;
 }
 
 .full-width-content .content {
@@ -587,7 +585,7 @@ th {
 
 .sidebar-primary {
 	float: right;
-	width: 360px;
+	max-width: 360px;
 }
 
 .sidebar-content .sidebar-primary,
@@ -599,7 +597,7 @@ th {
 
 .sidebar-secondary {
 	float: left;
-	width: 180px;
+	max-width: 180px;
 }
 
 .content-sidebar-sidebar .sidebar-secondary {
@@ -960,12 +958,12 @@ img.alignright,
 ---------------------------------------------------------------------------------------------------- */
 
 .site-header {
-	background-color: #77aa33;
-	/* min-height: 160px; */
 	background: 
-  url( 'images/tags-logo.png' ) no-repeat top left,
-	url( 'images/tg_grass.jpg' ) repeat-x top left;
+		url( 'images/tags-logo.png' ) no-repeat top left,
+		url( 'images/tg_grass.jpg' ) repeat-x top left;
 	background-size: 60px, auto;
+	background-color: #77aa33;
+	min-height: 60px; 
 }
 
 .site-header .wrap {
@@ -1403,7 +1401,7 @@ li.comment {
 ---------------------------------------------------------------------------------------------------- */
 
 .site-footer {
-	background-color: #fafdd0;
+	background-color: #d5e0c1;/* #c9e895; #fafdd0; */
 	font-size: 16px;
 	font-size: 1.6rem;
 	line-height: 1;
