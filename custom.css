@@ -16,7 +16,7 @@
 }
 
 .footer-widgets {
-	background-color: #77aa33;
+	/* background-color: #dce8cb; */
 	font-size: 80%;
 	max-width: 1200px;
 	margin: 0 auto;
@@ -47,7 +47,7 @@ span.label {
 
 .footer-widgets-1 {
 	width: 50%;
-	/* margin-left: 2%; */
+	margin-left: 2%; 
 	margin-right: 2%; 
 	float: left;
 }
@@ -225,6 +225,17 @@ h1:before { content: "Company Name"; }
 		width: 100%;
 	}
 	
+	.site-inner,
+	.wrap,
+	.footer-widgets {
+		padding-left: 5%;
+		padding-right: 5%;
+	}
+	
+	.footer-widgets-1 {
+		margin-left: 0%;
+	}
+	
 	
 	
 	
@@ -267,16 +278,17 @@ h1:before { content: "Company Name"; }
 	}
 	*/
 	
-
+	/*
 	.archive-description,
 	.author-box,
 	.comment-respond,
 	.entry,
 	.entry-comments,
 	.entry-pings,
-	.sidebar .widget,
-	.site-header {
-		padding: 0;
+	.site-header ,
+	*/
+	.sidebar .widget {
+		padding: 0%;
 	}
 
 }
@@ -299,15 +311,9 @@ h1:before { content: "Company Name"; }
 		background-color: #fff;
 		font-size: 16px;
 		font-size: 1.6rem;
-	}
+	} 	*/
 
-	.site-inner,
-	.wrap,
-	.footer-widgets {
-		padding-left: 5%;
-		padding-right: 5%;
-	}
-	*/
+
 
 	
   /*
