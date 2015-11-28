@@ -274,7 +274,7 @@ function genesis_tags_functions_loaded() {
 	include_once( get_template_directory() . '/lib/init.php' );
 	
 	if ( defined( "GENESIS_ALL" ) && GENESIS_ALL ) {
-  	add_action( "all", "genesis_all", 10, 2 );
+  	//add_action( "all", "genesis_all", 10, 2 );
 	}
 	//* Add HTML5 markup structure
 	add_theme_support( 'html5', array( 'search-form', 'comment-form', 'comment-list' ) );
