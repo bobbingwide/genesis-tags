@@ -349,7 +349,7 @@ h1:before { content: "Company Name"; }
 @media only screen and (max-width: 480px) {
 
 .site-header {
-	padding-left: 40px;
+	padding-left: 0px;
 }
 
 .site-title { 
