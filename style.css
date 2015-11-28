@@ -1402,8 +1402,8 @@ li.comment {
 
 .site-footer {
 	background-color: #d5e0c1;/* #c9e895; #fafdd0; */
-	font-size: 16px;
-	font-size: 1.6rem;
+	font-size: 80%;
+	/*font-size: 0.8rem; */
 	line-height: 1;
 	padding: 10px 0;
 	text-align: center;
