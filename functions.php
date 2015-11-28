@@ -287,7 +287,8 @@ function genesis_tags_functions_loaded() {
 	 'header',
 	//	'nav',
 	//        'subnav',
-		'site-inner'
+		'site-inner',
+		'footer-widgets'
 	) );
 
 	//* Add support for custom background
