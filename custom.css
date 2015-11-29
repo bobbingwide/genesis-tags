@@ -65,8 +65,12 @@ span.label {
  */
 
 div.TAGS_content-info { width: 100%; }
-div.TAGS_content-body { background-color: #ffffff; margin-top: 0px; padding: 10px 20px; }
+div.TAGS_content-body { background-color: #ffffff; margin-top: 0px; padding: 10px 10px; }
 div.TAGS_content-info:after { clear: left; }
+
+.TAGS_content-info ul#sections {
+	margin-left: 0px;
+}
 
 .TAGS_content-info ul#sections li {
 	line-height: 1;
@@ -371,6 +375,15 @@ h1:before { content: "Company Name"; }
 
 .genesis-nav-menu {
 	font-size: 14px;	
+}
+
+	
+.site-inner,
+.wrap,
+.footer-widgets {
+	padding-left: 2%;
+	padding-right: 2%;
+}
 
 
 }
