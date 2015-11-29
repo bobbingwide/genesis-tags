@@ -274,7 +274,7 @@ function genesis_tags_functions_loaded() {
 	include_once( get_template_directory() . '/lib/init.php' );
 	
 	if ( defined( "GENESIS_ALL" ) && GENESIS_ALL ) {
-  	//add_action( "all", "genesis_all", 10, 2 );
+  	add_action( "all", "genesis_all", 10, 2 );
 	}
 	//* Add HTML5 markup structure
 	add_theme_support( 'html5', array( 'search-form', 'comment-form', 'comment-list' ) );
@@ -318,6 +318,7 @@ function genesis_tags_functions_loaded() {
 	
 	// Remove primary menu
 	remove_action( 'genesis_after_header', 'genesis_do_nav' );
+	add_filter( "genesis_breadcrumb_args", "genesis_tags_breadcrumb_args" );
 	
 	
 
@@ -325,4 +326,9 @@ function genesis_tags_functions_loaded() {
 
 function genesis_tags_site_title( ) {
 	echo '<h1 class="site-title">The Anchor Golf Society</h1>';
+}
+
+function genesis_tags_breadcrumb_args( $args ) {
+	$args['labels']['prefix'] = "";
+	return( $args );
 }
