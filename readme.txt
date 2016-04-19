@@ -12,3 +12,14 @@ Github project link: https://github.com/bobbingwide/genesis-tags
 4. Activate the Genesis TAGS child theme
 
 
+## Change Log:
+
+1.0.0
+* Changed: Removed logic now available from the genesistant plugin [github bobbingwide genesis-tags issue 1]
+
+1.0 
+
+* Added: v1.0 - Nov 2015 for replacement website, migrated from Drupal
+
+
+

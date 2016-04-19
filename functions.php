@@ -1,20 +1,18 @@
-<?php // (C) Copyright Bobbing Wide 2015
+<?php // (C) Copyright Bobbing Wide 2015, 2016
 
-genesis_tags_functions_loaded();
-
-
-genesis_tags_functions_loaded();
-
-
-
-//* Child theme (do not remove) - is this really necessary? 
+// Child theme (do not remove) - is this really necessary? 
 define( 'CHILD_THEME_NAME', 'TAGS' );
 define( 'CHILD_THEME_URL', 'http://www.bobbingwide.com/oik-themes' );
-define( 'CHILD_THEME_VERSION', '2.2.3' );
+define( 'CHILD_THEME_VERSION', '1.0.0' );
+
+genesis_tags_functions_loaded();
+
+
 
 
 /**
  * Display footer credits for the genesis-tags theme
+ * 
  */	
 function tags_footer_creds_text( $text ) {
 	do_action( "oik_add_shortcodes" );
@@ -25,165 +23,8 @@ function tags_footer_creds_text( $text ) {
 	$text .= 'Website designed and developed by [bw_link text="Herb Miller" herbmiller.me] of';
 	$text .= ' <a href="//www.bobbingwide.com" title="Bobbing Wide - web design, web development">[bw]</a>';
 	$text .= '<br />';
-	$text .= '[bw_power]';
+	$text .= '[bw_power] and oik-plugins';
   return( $text );
-}
-
-/**
- * Trace all genesis hooks
- * 
- * So we can attempt to see what hook causes Genesis to do something.
- * Use View source and look for all the genesis hook names inside HTML comments
- * 
- * Notes:
- * - it's not safe to produce HTML comments before the doctype tag has been created
- * - we're only interested hooks prefixed 'genesis_'
- *
- * @param string $tag the action hook or filter
- * @param mixed $args parameters? 
- */
-function genesis_all( $tag, $args2=null ) {
-	static $ok_to_e_c = false;
-	if ( $ok_to_e_c ) {
-		if ( 0 === strpos( $tag, "genesis_" ) ) {
-			$hooked = genesis_get_hooks( $tag );
-			genesis_safe_e_c( $tag, $hooked );
-		}
-		if ( 0 === strpos( $tag, "the_excerpt" ) ) {
-			$hooked = genesis_get_hooks( $tag );
-			genesis_safe_e_c( $tag, $hooked );
-		}
-		
-		if ( 0 === strpos( $tag, "the_content" ) ) {
-			$hooked = genesis_get_hooks( $tag );
-			genesis_safe_e_c( $tag, $hooked );
-		}
-		
-		if ( 0 === strpos( $tag, "the_permalink" ) ) {
-			$hooked = genesis_get_hooks( $tag );
-			genesis_safe_e_c( $tag, $hooked );
-			//bw_trace2( $hooked, $tag );
-			//bw_backtrace();
-		}
-		
-	} else {
-		if ( "genesis_doctype" === $tag ) {
-			$ok_to_e_c = true;
-		}
-	}
-}
-
-/**
- * Only echo comments when safe
- */
-function genesis_safe_e_c( $tag, $hooked ) {
-	static $deferred = null;
-	$hook_type = genesis_trace_get_hook_type( $tag );
-	if ( $hook_type === "action" ) {
-		if ( $deferred ) {
-			_e_c( "deferred $deferred" );
-			$deferred = null;
-		}
-		_e_c( "$hook_type $tag $hooked" );
-	
-	} else {
-		$deferred .= "\n";
-		$deferred .= "$hook_type $tag $hooked";
-	}
-}
-	
-/** 
- * Return the hook type
- * 
- */ 
-function genesis_trace_get_hook_type( $hook ) {
-	global $wp_actions;
-	if ( isset( $wp_actions[ $hook ] ) ){
-		$type = "action";
-	} else {
-		$type = "filter";
-	}
-	return( $type );
-}
-
-/**
- * Return the current filter summary
- * 
- * Even if current_filter exists the global $wp_current_filter may not be set
- * 
- * @return string current filter array imploded with commas
- */
-function genesis_current_filter() {
-  global $wp_current_filter;
-  if ( is_array( $wp_current_filter ) ) { 
-	  $filters = implode( ",",  $wp_current_filter );
-	} else {
-	  $filters = null;
-	}		
-  return( $filters );  
-}
-
-/**
- * Return the attached hooks
- *
- * Note: It's safe to use foreach over $wp_filter[ $tag ]
- * since this routine's invoked for the 'all' hook
- * not the hook in question.
- * But I've copied the code for bw_trace_get_attached_hooks() anyway
- * since it's more 'complete' 
- *
- * See {@link http://php.net/manual/en/control-structures.foreach.php}
- *
- * @param string $tag the action hook or filter
- * @return string the attached hook information
- *
- */
-function genesis_get_hooks( $tag ) {
-	global $wp_filter; 
-  if ( isset( $wp_filter[ $tag ] ) ) {
-		$current_hooks = $wp_filter[ $tag ];
-		//bw_trace2( $current_hooks, "current hooks for $tag", false, BW_TRACE_VERBOSE );
-		$hooks = null;
-		$hooks = genesis_current_filter();
-		$hooks .= "\n";
-		foreach ( $current_hooks as $priority => $functions ) {
-			$hooks .= "\n: $priority  ";
-			foreach ( $functions as $index => $args ) {
-				$hooks .= " ";
-				if ( is_object( $args['function' ] ) ) {
-					$object_name = get_class( $args['function'] );
-					$hooks .= $object_name; 
-
-				} elseif ( is_array( $args['function'] ) ) {
-					//bw_trace2( $args, "args" );
-					if ( is_object( $args['function'][0] ) ) { 
-						$object_name = get_class( $args['function'][0] );
-					}	else {
-						$object_name = $args['function'][0];
-					}
-					$hooks .= $object_name . '::' . $args['function'][1];
-				} else {
-					$hooks .= $args['function'];
-				}
-				$hooks .= ";" . $args['accepted_args'];
-			}
-		}
-		
-	} else {
-		$hooks = null;
-	}
-	return( $hooks ); 
-}
-
-/**
- * Echo a comment
- *
- * @param string $string the text to echo inside the comment
- */
-function _e_c( $string ) {
-	echo "<!--\n";
-	echo $string;
-	echo "-->";
 }
 
 /**
@@ -265,17 +106,14 @@ function genesis_tags_pre_get_option_site_layout( $layout, $setting ) {
 	return( $layout );
 }
 
-
 /**
  * Register the hooks for this theme
+ * 
  */
 function genesis_tags_functions_loaded() {
 	// Start the engine	- @TODO Is this necessary?
 	include_once( get_template_directory() . '/lib/init.php' );
 	
-	if ( defined( "GENESIS_ALL" ) && GENESIS_ALL ) {
-  	add_action( "all", "genesis_all", 10, 2 );
-	}
 	//* Add HTML5 markup structure
 	add_theme_support( 'html5', array( 'search-form', 'comment-form', 'comment-list' ) );
 
@@ -294,7 +132,7 @@ function genesis_tags_functions_loaded() {
 	//* Add support for custom background
 	add_theme_support( 'custom-background' );
 
-	//* Add support for 5-column footer widgets - requires extra CSS
+	//* Add support for 3-column footer widgets - requires extra CSS
 	add_theme_support( 'genesis-footer-widgets', 3 );
 
 	add_filter( 'genesis_footer_creds_text', "tags_footer_creds_text" );
@@ -319,11 +157,12 @@ function genesis_tags_functions_loaded() {
 	// Remove primary menu
 	remove_action( 'genesis_after_header', 'genesis_do_nav' );
 	add_filter( "genesis_breadcrumb_args", "genesis_tags_breadcrumb_args" );
-	
-	
 
 }
 
+/**
+ * 
+ */ 
 function genesis_tags_site_title( ) {
 	echo '<h1 class="site-title">The Anchor Golf Society</h1>';
 }
