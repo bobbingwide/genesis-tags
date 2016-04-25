@@ -1,4 +1,4 @@
-/* (C) Copyright Bobbing Wide 2015 */
+/* (C) Copyright Bobbing Wide 2015,2016 */
 /* Dummy custom.css for genesis-tags theme */
 /* Note that this doesn't get ZIPped by tip.bat */
 
@@ -384,6 +384,39 @@ h1:before { content: "Company Name"; }
 	padding-left: 2%;
 	padding-right: 2%;
 }
+
+
+}
+
+@media only print {
+	div.TAGS_content-info,
+	div.footer-widgets,
+	footer,
+	header,
+	img { 
+		display: none;
+		
+	}
+	
+	table {
+		line-height: 1;
+	}
+	
+	.site-inner {
+		padding-top: 0;
+		position: relative;
+		top: 0px;
+	}
+	
+	a {
+		text-decoration: none;
+	}
+	
+	body {
+		font-size: 0.8em;
+	}
+
+	
 
 
 }
