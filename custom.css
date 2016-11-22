@@ -384,6 +384,9 @@ h1:before { content: "Company Name"; }
 	padding-left: 2%;
 	padding-right: 2%;
 }
+ 
+	span.splitbar { display:none;  }
+	span.lastupdated { display: block; clear: both; }
 
 
 }

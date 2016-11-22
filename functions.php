@@ -30,25 +30,35 @@ function tags_footer_creds_text( $text ) {
 /**
  * Display the post info in our style
  *
- * We only want to display the post date and post modified date
- * plus the post_edit link. 
- * Note: The post edit link may appear multiple times
+ * We only want to display the post date and post modified date plus the post_edit link. 
+ * 
+ * Note: On some pages the post edit link appeared multiple times - so we had to find a fancy way
+ * of turning it off, except when we really wanted it. 
+ * Solution was to not use "genesis_post_info" but to expand shortcodes ourselves  
+ *
  *
  */
 function genesis_tags_post_info() {
+	remove_filter( "genesis_edit_post_link", "__return_false" );
 	$output = genesis_markup( array(
     'html5'   => '<p %s>',
     'xhtml'   => '<div class="post-info">',
     'context' => 'entry-meta-before-content',
     'echo'    => false,
 	) );
-	$string = sprintf( __( 'Published %1$s', 'genesis-tags' ), '[post_date]' );
+	$string = sprintf( __( 'Published: %1$s', 'genesis-oik' ), '[post_date]' );
+	$string .= '<span class="splitbar">';
 	$string .= ' | ';
-	$string .= sprintf( __( 'Last updated %1$s', 'genesis-tags' ), '[post_modified_date]' );
+	$string .= '</span>';
+	$string .= '<span class="lastupdated">';
+	$string .= sprintf( __( 'Last updated: %1$s', 'genesis-oik' ), '[post_modified_date]' );
+	$string .= '</span>';
   $string .= ' [post_edit]';
-	$output .= apply_filters( 'genesis_post_info', $string);
+	//$output .= apply_filters( 'do_shortcodes', $string);
+	$output .= do_shortcode( $string );
 	$output .= genesis_html5() ? '</p>' : '</div>';  
 	echo $output;
+	add_filter( "genesis_edit_post_link", "__return_false" );
 }
 
 /**
@@ -144,7 +154,7 @@ function genesis_tags_functions_loaded() {
 	// Remove post info
 	remove_action( 'genesis_entry_header', 'genesis_post_info', 12 );
 	add_action( 'genesis_entry_footer', 'genesis_tags_post_info' );
-	//add_filter( "genesis_edit_post_link", "__return_false" );
+	add_filter( "genesis_edit_post_link", "__return_false" );
 	
   //genesis_tags_register_sidebars(); 
 	 	
@@ -157,6 +167,9 @@ function genesis_tags_functions_loaded() {
 	// Remove primary menu
 	remove_action( 'genesis_after_header', 'genesis_do_nav' );
 	add_filter( "genesis_breadcrumb_args", "genesis_tags_breadcrumb_args" );
+	
+	
+	//remove_action( 'genesis_entry_footer', 'genesis_post_meta' );
 
 }
 
@@ -171,3 +184,6 @@ function genesis_tags_breadcrumb_args( $args ) {
 	$args['labels']['prefix'] = "";
 	return( $args );
 }
+
+
+
