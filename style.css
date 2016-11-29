@@ -579,6 +579,7 @@ th {
 
 .full-width-content .content {
 	width: 100%;
+	max-width: 100%;
 }
 
 /* ### Primary Sidebar */
