@@ -145,7 +145,7 @@ function genesis_tags_functions_loaded() {
 	//* Add support for 3-column footer widgets - requires extra CSS
 	add_theme_support( 'genesis-footer-widgets', 3 );
 
-	add_filter( 'genesis_footer_creds_text', "tags_footer_creds_text" );
+	add_filter( 'genesis_pre_get_option_footer_text', "tags_footer_creds_text" );
 	
   add_filter( 'genesis_pre_get_option_site_layout', 'genesis_tags_pre_get_option_site_layout', 10, 2 );
 	
