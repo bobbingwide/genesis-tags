@@ -120,6 +120,30 @@ div.TAGS_content-info:after { clear: left; }
 
 }
 
+div.counts {
+	display: flex;
+}
+div.counts span {
+	padding: 0 10px;
+}
+
+div.counts span.count {
+	font-weight: bold;
+}
+
+.player table {
+	font-size: 90%;
+}
+
+.player table.results tr td:first-of-type {
+ width: 50%;
+	padding-right: 2%;
+}
+
+.player table.results tr td {
+	width: 25%;
+}
+
 /**
  * Special CSS to style the Next Event and Previous event headings!"
  <h1></h1>
