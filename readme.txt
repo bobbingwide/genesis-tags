@@ -2,9 +2,9 @@
 Contributors: bobbingwide
 Donate link: http://www.oik-plugins.com/oik/oik-donate/
 Tags: genesis, TAGS, one-column, two-columns, sidebars, responsive-layout, accessibility-ready, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-images, flexible-header, microformats, post-formats, rtl-language-support, sticky-post, threaded-comments
-Requires at least: 4.6
-Tested up to: 4.7-beta4
-Version: 1.0.1
+Requires at least: 5.0
+Tested up to: 5.8.2
+Version: 1.0.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -25,6 +25,10 @@ genesis-tags is a child theme for the Genesis Theme Framework, implemented on an
 
 
 == Change Log ==
+= 1.0.2 =
+* Changed: Add styling for the player page
+* Changed: Replace genesis_footer_creds_text by genesis_pre_get_option_footer_text
+
 = 1.0.1 =
 * Added: Add new screenshot.png file 880x660
 * Added: Media queries for printing Players table	[github bobbingwide genesis-tags issue 3]
@@ -40,7 +44,7 @@ genesis-tags is a child theme for the Genesis Theme Framework, implemented on an
 
 
 == Copyright ==
-(C) Copyright Bobbing Wide 2015,2016
+(C) Copyright Bobbing Wide 2015,2016,2021
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
