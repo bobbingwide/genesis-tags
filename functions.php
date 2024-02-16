@@ -183,7 +183,11 @@ function genesis_tags_genesis_after_header() {
 }
 
 function genesis_tags_get_sidebar_alt() {
-	get_sidebar( 'alt' );
+	$layout = genesis_site_layout();
+	//echo $layout;
+	if ( $layout !== 'full-width-content') {
+		get_sidebar( 'alt' );
+	}
 }
 
 /**
