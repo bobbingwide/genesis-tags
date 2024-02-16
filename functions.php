@@ -170,7 +170,20 @@ function genesis_tags_functions_loaded() {
 	
 	
 	//remove_action( 'genesis_entry_footer', 'genesis_post_meta' );
+	remove_action( 'genesis_after_content', 'genesis_get_sidebar');
+	add_action( 'genesis_before_content', 'genesis_get_sidebar');
+	add_action( 'genesis_after_content', 'genesis_tags_get_sidebar_alt');
 
+	//add_action( 'genesis_after_header', 'genesis_tags_genesis_after_header');
+
+}
+
+function genesis_tags_genesis_after_header() {
+
+}
+
+function genesis_tags_get_sidebar_alt() {
+	get_sidebar( 'alt' );
 }
 
 /**

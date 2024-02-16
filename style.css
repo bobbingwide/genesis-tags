@@ -4,9 +4,9 @@ Theme URI: http://www.bobbingwide.com/themes/genesis-tags
 Description: Child theme of genesis framework with image.php for The Anchor Golf Society
 Author: Bobbing Wide  
 Author URI: http://www.oik-plugins.com/author/bobbingwide
-Version: 1.0.1 
+Version: 1.1.0
 Template: genesis 
-Template Version: 2.4.2 
+Template Version: 3.5.0
 Tags:   
 License: GPL-2.0+  
 License URI: http://www.gnu.org/licenses/gpl-2.0.html  
@@ -585,8 +585,7 @@ th {
 /* ### Primary Sidebar */
 
 .sidebar-primary {
-	float: right;
-	max-width: 360px;
+
 }
 
 .sidebar-content .sidebar-primary,
@@ -597,8 +596,7 @@ th {
 /* ### Secondary Sidebar */
 
 .sidebar-secondary {
-	float: left;
-	max-width: 180px;
+
 }
 
 .content-sidebar-sidebar .sidebar-secondary {
@@ -1378,6 +1376,9 @@ li.comment {
 .sidebar {
 	font-size: 16px;
 	font-size: 1.6rem;
+	float: right;
+	max-width: 350px;
+	width: 100%;
 }
 
 .sidebar li {
@@ -1393,8 +1394,8 @@ li.comment {
 
 .sidebar .widget {
 	background-color: #fff;
-	margin-bottom: 40px;
-	padding: 40px;
+	margin-bottom: 0px;
+	padding: 30px;
 }
 
 
