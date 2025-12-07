@@ -3,12 +3,10 @@
 // Child theme (do not remove) - is this really necessary? 
 define( 'CHILD_THEME_NAME', 'TAGS' );
 define( 'CHILD_THEME_URL', 'http://www.bobbingwide.com/oik-themes' );
-define( 'CHILD_THEME_VERSION', '1.0.0' );
+define( 'CHILD_THEME_VERSION', '1.1.0' );
 
-genesis_tags_functions_loaded();
-
-
-
+add_action( 'after_setup_theme', 'genesis_tags_functions_loaded' );
+//genesis_tags_functions_loaded();
 
 /**
  * Display footer credits for the genesis-tags theme
