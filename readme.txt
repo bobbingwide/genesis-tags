@@ -3,8 +3,8 @@ Contributors: bobbingwide
 Donate link: http://www.oik-plugins.com/oik/oik-donate/
 Tags: genesis, TAGS, one-column, two-columns, sidebars, responsive-layout, accessibility-ready, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-images, flexible-header, microformats, post-formats, rtl-language-support, sticky-post, threaded-comments
 Requires at least: 5.0
-Tested up to: 6.4.3
-Version: 1.1.0
+Tested up to: 6.9
+Version: 1.2.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -25,6 +25,11 @@ genesis-tags is a child theme for the Genesis Theme Framework, implemented on an
 
 
 == Change Log ==
+= 1.2.0 =
+* Changed: Improve colour contrast for a11y #8
+* Tested: With Genesis v3.6.1
+* Tested: With WordPress 6.9
+
 = 1.1.0 =
 * Changed: Don't display secondary sidebar on full-width-content #7
 * Changed: Reduce table's bottom margin. Ensure secondary sidebar flows under primary #7
@@ -51,7 +56,7 @@ genesis-tags is a child theme for the Genesis Theme Framework, implemented on an
 
 
 == Copyright ==
-(C) Copyright Bobbing Wide 2015-2024
+(C) Copyright Bobbing Wide 2015-2025
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
